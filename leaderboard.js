@@ -56,4 +56,7 @@ if(Meteor.isClient){
 
 if(Meteor.isServer){
     // this code only runs on the server
+    Meteor.publish('thePlayers', function(){
+      return PlayersList.find().fetch();
+    });
 }
